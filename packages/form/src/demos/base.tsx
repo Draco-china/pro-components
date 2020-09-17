@@ -1,5 +1,10 @@
 import React from 'react';
-import ProForm, { ProFormText, ProFormDateRangePicker, ProFormSelect } from '@ant-design/pro-form';
+import ProForm, {
+  ProFormText,
+  ProFormDateRangePicker,
+  ProFormSelect,
+  ProFormField,
+} from '@ant-design/pro-form';
 
 export default () => {
   return (
@@ -39,6 +44,7 @@ export default () => {
       <ProFormText width="s" name="id" label="主合同编号" />
       <ProFormText name="project" disabled label="项目名称" initialValue="xxxx项目" />
       <ProFormText width="xs" name="mangerName" disabled label="商务经理" initialValue="启途" />
+      <ProFormField name="password" label="密码" valueType="password" initialValue="password" />
     </ProForm>
   );
 };
