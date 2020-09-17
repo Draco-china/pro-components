@@ -64,6 +64,9 @@ export default () => {
         <ProDescriptions.Item label="时间" valueType="time">
           {moment().valueOf()}
         </ProDescriptions.Item>
+        <ProDescriptions.Item label="密码" valueType="password">
+          password
+        </ProDescriptions.Item>
         <ProDescriptions.Item label="代码块" valueType="code">
           {`
             yarn run v1.22.0
