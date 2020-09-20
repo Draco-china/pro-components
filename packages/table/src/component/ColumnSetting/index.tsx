@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useContext } from 'react';
 import { useIntl } from '@ant-design/pro-provider';
 import { ConfigContext } from 'antd/lib/config-provider';
 import {
@@ -236,17 +236,11 @@ const GroupCheckboxList: React.FC<{
 };
 
 const ColumnSetting = <T, U = {}>(props: ColumnSettingProps<T>) => {
-  const columnRef = useRef({});
   const counter = Container.useContainer();
   const localColumns: Omit<ProColumns<any> & { index?: number }, 'ellipsis'>[] =
     props.columns || counter.columns || [];
 
   const { columnsMap, setColumnsMap, setSortKeyColumns } = counter;
-
-  useEffect(() => {
-    columnRef.current = JSON.parse(JSON.stringify(columnsMap));
-  }, []);
-
   /**
    * 设置全部选中，或全部未选中
    * @param show
@@ -296,7 +290,7 @@ const ColumnSetting = <T, U = {}>(props: ColumnSettingProps<T>) => {
           </Checkbox>
           <a
             onClick={() => {
-              setColumnsMap(columnRef.current);
+              setColumnsMap({});
               setSortKeyColumns([]);
             }}
           >

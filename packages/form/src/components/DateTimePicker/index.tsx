@@ -11,21 +11,20 @@ const valueType = 'dateTime';
  * 时间日期选择组件
  * @param
  */
-const ProFormDateTimePicker: React.FC<ProFormItemProps<
-  DatePickerProps
->> = React.forwardRef(({ fieldProps, proFieldProps }, ref) => (
+const ProFormDateTimePicker: React.FC<ProFormItemProps<DatePickerProps>> = ({
+  fieldProps,
+  proFieldProps,
+}) => (
   <ProField
-    ref={ref}
     text={fieldProps?.value}
     mode="edit"
     fieldProps={fieldProps}
     valueType={valueType}
     {...proFieldProps}
   />
-));
+);
 
 export default createField<ProFormItemProps<DatePickerProps>>(ProFormDateTimePicker, {
   valueType,
   customLightMode: true,
-  ignoreFelidWidth: true,
 });

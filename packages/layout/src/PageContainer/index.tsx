@@ -3,11 +3,10 @@ import React, { useContext, ReactNode } from 'react';
 import classNames from 'classnames';
 import { TabsProps, TabPaneProps } from 'antd/lib/tabs';
 import { PageHeaderProps } from 'antd/lib/page-header';
-
+import './index.less';
 import RouteContext, { RouteContextType } from '../RouteContext';
 import GridContent from '../GridContent';
 import FooterToolbar from '../FooterToolbar';
-import './index.less';
 
 export interface PageHeaderTabConfig {
   tabList?: (TabPaneProps & { key?: React.ReactText })[];
@@ -24,7 +23,6 @@ export interface PageContainerProps extends PageHeaderTabConfig, Omit<PageHeader
   prefixCls?: string;
   footer?: ReactNode[];
   ghost?: boolean;
-  header?: PageHeaderProps;
   pageHeaderRender?: (props: PageContainerProps) => React.ReactNode;
 }
 
@@ -88,16 +86,7 @@ const defaultPageHeaderRender = (
   props: PageContainerProps,
   value: RouteContextType & { prefixedClassName: string },
 ): React.ReactNode => {
-  const {
-    title,
-    content,
-    pageHeaderRender,
-    header,
-    extraContent,
-    style,
-    prefixCls,
-    ...restProps
-  } = props;
+  const { title, content, pageHeaderRender, extraContent, style, prefixCls, ...restProps } = props;
 
   if (pageHeaderRender) {
     return pageHeaderRender({ ...props, ...value });
@@ -115,7 +104,6 @@ const defaultPageHeaderRender = (
         ...restProps,
         prefixedClassName: value.prefixedClassName,
       })}
-      {...header}
       prefixCls={prefixCls}
     >
       {renderPageHeader(content, extraContent, value.prefixedClassName)}

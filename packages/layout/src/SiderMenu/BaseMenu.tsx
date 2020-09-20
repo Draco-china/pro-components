@@ -137,9 +137,7 @@ class MenuUtil {
     }
 
     return (
-      <Menu.Item disabled={item.disabled} key={item.key || item.path}>
-        {this.getMenuItemPath(item, isChildren)}
-      </Menu.Item>
+      <Menu.Item key={item.key || item.path}>{this.getMenuItemPath(item, isChildren)}</Menu.Item>
     );
   };
 

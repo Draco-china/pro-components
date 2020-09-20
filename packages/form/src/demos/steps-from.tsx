@@ -41,7 +41,7 @@ export default () => {
           <ProFormText
             name="name"
             label="实验名称"
-            tooltip="最长为 24 位，用于标定的唯一 id"
+            tip="最长为 24 位，用于标定的唯一 id"
             placeholder="请输入名称"
             rules={[{ required: true }]}
           />
@@ -99,7 +99,7 @@ export default () => {
           />
           <ProFormSelect
             label="Pod 调度策略"
-            name="remark2"
+            name="remark"
             initialValue="2"
             options={[
               {

@@ -45,7 +45,6 @@ exports[`Table valueEnum 🎏 dynamic enum test 1`] = `
               aria-selected="false"
               class="ant-select-item ant-select-item-option ant-select-item-option-active"
               label="关闭"
-              title="关闭"
             >
               <div
                 class="ant-select-item-option-content"
@@ -63,7 +62,6 @@ exports[`Table valueEnum 🎏 dynamic enum test 1`] = `
               aria-selected="false"
               class="ant-select-item ant-select-item-option"
               label="运行中"
-              title="运行中"
             >
               <div
                 class="ant-select-item-option-content"
@@ -81,7 +79,6 @@ exports[`Table valueEnum 🎏 dynamic enum test 1`] = `
               aria-selected="false"
               class="ant-select-item ant-select-item-option"
               label="已上线"
-              title="已上线"
             >
               <div
                 class="ant-select-item-option-content"
@@ -99,7 +96,6 @@ exports[`Table valueEnum 🎏 dynamic enum test 1`] = `
               aria-selected="false"
               class="ant-select-item ant-select-item-option"
               label="异常"
-              title="异常"
             >
               <div
                 class="ant-select-item-option-content"

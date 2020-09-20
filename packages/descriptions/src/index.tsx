@@ -57,10 +57,6 @@ export type ProDescriptionsProps<T = {}> = DescriptionsProps & {
 
   loading?: boolean;
 
-  tooltip?: string;
-  /**
-   * @deprecated 你可以使用 tooltip，这个更改是为了与 antd 统一
-   */
   tip?: string;
 };
 
@@ -119,12 +115,7 @@ const conversionProProSchemaToDescriptionsItem = (
       <Descriptions.Item
         {...restItem}
         key={restItem.label?.toString() || index}
-        label={
-          <LabelIconTip
-            label={title || restItem.label}
-            tooltip={restItem.tooltip || restItem.tip}
-          />
-        }
+        label={<LabelIconTip label={title || restItem.label} tip={restItem.tip} />}
       >
         <Field
           valueEnum={valueEnum}
@@ -240,7 +231,7 @@ const ProDescriptions = <T extends {}>(props: ProDescriptionsProps<T>) => {
           options
         )
       }
-      title={<LabelIconTip label={rest.title} tooltip={rest.tooltip || rest.tip} />}
+      title={<LabelIconTip label={rest.title} tip={rest.tip} />}
     >
       {children}
     </Descriptions>

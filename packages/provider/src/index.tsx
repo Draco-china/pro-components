@@ -134,19 +134,8 @@ const ConfigProviderWarp: React.FC<{}> = ({ children }) => {
         const key = findIntlKeyByAntdLocaleKey(localeName);
         // antd 的 key 存在的时候以 antd 的为主
         const intl =
-          localeName && value.intl?.locale === 'default'
-            ? intlMap[key]
-            : value.intl || intlMap[key];
-        return (
-          <ConfigProvider
-            value={{
-              ...value,
-              intl: intl || zhCNIntl,
-            }}
-          >
-            {children}
-          </ConfigProvider>
-        );
+          localeName && value.intl.locale === 'default' ? intlMap[key] : value || intlMap[key];
+        return <ConfigProvider value={intl || zhCNIntl}>{children}</ConfigProvider>;
       }}
     </ConfigConsumer>
   );
@@ -156,6 +145,7 @@ export { ConfigConsumer, ConfigProvider, ConfigProviderWarp, createIntl };
 
 export function useIntl(): IntlType {
   const context = useContext(ConfigContext);
+
   noteOnce(
     !!context.intl,
     `
